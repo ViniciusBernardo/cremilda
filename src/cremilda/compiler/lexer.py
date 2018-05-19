@@ -24,6 +24,8 @@ class Lexer(ox.Lexer):
     r_IF = r'if'
     r_THEN = r'then'
     r_ELSE = r'else'
+    r_NOTHING = r'Nothing'
+    r_JUST = r'Just'
 
 
 #

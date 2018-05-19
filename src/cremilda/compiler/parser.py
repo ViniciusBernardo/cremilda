@@ -54,7 +54,7 @@ def make_parser():
         ("elem : 'not' value", lambda x: Expr.Call(Expr.Name('negate'), [x])),
         # ("elem : unaryop", identity),
         # ("elem : lambda", identity),
-        # ("elem : constructor", identity),
+        ("elem : constructor", identity),
 
         # Valores
         ("value : atom", identity),
@@ -103,7 +103,7 @@ def make_parser():
         ("list : '[' items ']'", lambda x: Expr.List(x)),
 
         ("tuple : '(' ')'", lambda: Expr.Tuple([])),
-        ("tuple : '(' items ')'", lambda x: Expr.Tuple(tuple(x)),
+        ("tuple : '(' items ')'", lambda x: Expr.Tuple(tuple(x))),
 
 
         ("items: elem", lambda x: [x]),
@@ -114,7 +114,8 @@ def make_parser():
         # ("record : ...", ...),
 
         # Construtor
-        # ("constructor : ...", ...),
+        ("constructor : 'Just' atom", lambda x: Expr.Just(x)),
+        ("constructor : 'Nothing'", lambda : Expr.Nothing()),
     ])
 
 

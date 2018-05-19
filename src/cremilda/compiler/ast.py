@@ -24,6 +24,8 @@ class Expr(Union):
     Or = sk.opt(left=this, right=this)
     Record = sk.opt(data=list)
     Tuple = sk.opt(data=tuple)
+    Just = sk.opt(object)
+    Nothing = sk.opt()
 
     def required_symbols(self, acc=None):
         """
@@ -97,6 +99,8 @@ Op = Expr.Op
 Or = Expr.Or
 Record = Expr.Record
 Tuple = Expr.Tuple
+Just = Expr.Just
+Nothing = Expr.Nothing
 
 # Declarações
 Assign = Stmt.Assign
