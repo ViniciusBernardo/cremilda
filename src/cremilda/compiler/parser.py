@@ -115,7 +115,7 @@ def make_parser():
 
         # Construtor
         ("constructor : 'Just' atom", lambda x: Expr.Just(x)),
-        ("constructor : 'Nothing'", lambda : Expr.Nothing()),
+        ("constructor : 'Nothing'", lambda : Expr.Nothing),
     ])
 
 

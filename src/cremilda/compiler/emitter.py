@@ -45,14 +45,9 @@ class to_python_expr:  # noqa: N801
         return as_expr([to_python(x) for x in values])
 
     def Just(value):
-        print('-----------------')
-        print(value.value)
-        print('-----------------')
-        #return as_expr(sk.Just(value.value).value)
-        return sk.Just(value.value)
+        return sk.Just(value)
 
-    def Nothing():
-        return sk.Nothing
+    Nothing = sk.Maybe.Nothing
 
 
 @sk.casedispatch.from_namespace(Stmt)
